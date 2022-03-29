@@ -1,4 +1,4 @@
-# (g)awk script that converts .csv files to .cxt or .cex files.
+# (g)awk scripts that convert .csv files to .cxt or .cex files.
 
 FCA is a great framework. I often use it for my research.
 
