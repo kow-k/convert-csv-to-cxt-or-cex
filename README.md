@@ -8,11 +8,11 @@ For example, I can't figure out the format of .csv files Concept Explorer FX acc
 
 # scripts
 
-[(g)awk script](convert-csv-to-cxt.awk)
+[convert-csv-to-cxt.awk](convert-csv-to-cxt.awk)
 
 ## usage
 
-Run with a (g)awk as:
+Run with a (g)awk by issuing:
 
 `(g)awk convert-csv-to-cxt.awk CSV_FILE > CXT_FILE`
 
@@ -21,6 +21,20 @@ where `CSV_FILE is the input` and `CXT_FILE` is the output.
 or make the script executable by `chmod +x convert-csv-to-cxt.awk` and then,
 
 `./convert-csv-to-cxt.awk CSV_FILE > CXT_FILE`
+
+[convert-csv-to-cex.awk](convert-csv-to-cex.awk)
+
+## usage
+
+Run with a (g)awk by issuing:
+
+`(g)awk convert-csv-to-cex.awk CSV_FILE > CXT_FILE`
+
+where `CSV_FILE is the input` and `CXT_FILE` is the output.
+
+or make the script executable by `chmod +x convert-csv-to-cex.awk` and then,
+
+`./convert-csv-to-cex.awk CSV_FILE > CEX_FILE`
 
 # sample .csv files
 
