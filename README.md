@@ -42,7 +42,11 @@ or make the script executable by `chmod +x convert-csv-to-cex.awk` and then,
 
 # FCA tools
 
+One of the oldest but greatest tool for FCA
+
 [Concept Explorer FX](https://francesco-kriegel.github.io/conexp-fx/)
+
+More recent re-implementation of Concept Explorer with advanced visualizations:
 
 [Concept Explorer (original)](http://conexp.sourceforge.net/)
 
