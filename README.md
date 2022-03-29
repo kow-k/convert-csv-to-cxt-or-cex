@@ -44,9 +44,9 @@ or make the script executable by `chmod +x convert-csv-to-cex.awk` and then,
 
 One of the oldest but greatest tool for FCA
 
-[Concept Explorer FX](https://francesco-kriegel.github.io/conexp-fx/)
+[Concept Explorer (original)](http://conexp.sourceforge.net/)
 
 More recent re-implementation of Concept Explorer with advanced visualizations:
 
-[Concept Explorer (original)](http://conexp.sourceforge.net/)
+[Concept Explorer FX](https://francesco-kriegel.github.io/conexp-fx/)
 
