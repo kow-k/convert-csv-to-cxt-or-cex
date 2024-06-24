@@ -3,11 +3,12 @@
 ## Concept Explore FX can handle.
 ## Developed by Kow Kuroda
 ## Created: 2020/07/04
-## Modified:
-## 2020/07/04
+## Modifications:
+## 2020/07/04:
 ## 2021/10/08 fixed bugs in counting
-## 2021/10/15 changed encoding scheme so that you can choose to encode
-## negatively (using on 0 vs other values) or positively (using 1 vs other values).
+## 2021/10/15: changed encoding scheme so that you can choose to encode
+## negatively (using on 0 vs other values) or positively (using 1 vs other values)
+## 2024/06/24: added handling of .csv variation on the first linel with or without ","
 
 ## setup
 BEGIN { FS = "," ; debug = 0 ; verbose = 0; oindex = 0; NegativelyBased = 1;
@@ -22,7 +23,11 @@ BEGIN { FS = "," ; debug = 0 ; verbose = 0; oindex = 0; NegativelyBased = 1;
 			print "#debug $0:" $0
 		}
 		# build attribute list
-		for (i = 1; i <= NF; i++) { ATTR[i] = $i }
+		if ( $1 == "") {
+			for (i = 2; i <= NF; i++) { ATTR[i] = $i }
+		} else {
+			for (i = 1; i <= NF; i++) { ATTR[i] = $i }
+		}
 	} else {
 		if (debug) {
 			print "#debug NR:" NR
@@ -63,13 +68,20 @@ END {
 	#
 	for (i = 1; i <= oindex; i++) {
 		if (debug) { printf "#debug: oindex: %s\n", i }
-		print OBJ[i]
-		}
+		obj = OBJ[i]
+		if (obj != "") { print OBJ[i] }
+	}
 	## print encoding
 	## attributes
-	for (i = 1; i <= length(ATTR); i++) { print ATTR[i] }
+	for (i = 1; i <= length(ATTR); i++) {
+		attr = ATTR[i]
+		if (attr != "") { print ATTR[i] }
+	}
 	## objects
-	for (i = 1; i <= oindex; i++) { print CXT[i] }
+	for (i = 1; i <= oindex; i++) {
+		obj = CXT[i]
+		if (obj != "") { print CXT[i] }
+	}
 	#
 	if (verbose) {
 		print " OBJ size: " length(OBJ)
